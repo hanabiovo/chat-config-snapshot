@@ -623,12 +623,14 @@ function addExtensionButton() {
 async function createSettingsPanel() {
     try {
         const context = getContext();
-        const template = await context.renderExtensionTemplateAsync('third-party/chat-config-snapshot', 'template');
+        const templateHtml = await context.renderExtensionTemplateAsync('third-party/chat-config-snapshot', 'template');
         
-        if (!template) {
+        if (!templateHtml) {
             console.error(`[${MODULE_NAME}] Could not load template`);
             return;
         }
+        
+        const template = $(templateHtml);
         
         // 设置当前值
         updateSettingsUI(template);
