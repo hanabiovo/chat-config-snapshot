@@ -1,0 +1,111 @@
+<div id="chat-config-snapshot-settings">
+    <div class="title_restorable">
+        <h3>聊天配置快照设置</h3>
+    </div>
+    
+    <!-- 个人设置区块 -->
+    <div class="marginBot10">
+        <h4>个人设置</h4>
+        
+        <div class="flex-container flexFlowColumn">
+            <!-- 自动保存快照 -->
+            <label class="checkbox_label" for="chat-config-snapshot-auto-save">
+                <input type="checkbox" id="chat-config-snapshot-auto-save" />
+                <span>自动保存快照</span>
+                <small>离开聊天时自动保存当前配置</small>
+            </label>
+            
+            <!-- 无感模式 -->
+            <label class="checkbox_label" for="chat-config-snapshot-silent-mode">
+                <input type="checkbox" id="chat-config-snapshot-silent-mode" />
+                <span>无感模式</span>
+                <small>自动操作时不显示提示</small>
+            </label>
+        </div>
+        
+        <!-- 快照保存范围 -->
+        <div class="marginTop10">
+            <label>快照保存范围</label>
+            <small>选择要保存的配置类型（推理模板始终保存）</small>
+            
+            <div class="flex-container flexFlowColumn marginTop5">
+                <label class="checkbox_label" for="chat-config-snapshot-scope-preset">
+                    <input type="checkbox" id="chat-config-snapshot-scope-preset" />
+                    <span>预设配置</span>
+                </label>
+                
+                <label class="checkbox_label" for="chat-config-snapshot-scope-worldinfo">
+                    <input type="checkbox" id="chat-config-snapshot-scope-worldinfo" />
+                    <span>世界书配置</span>
+                </label>
+                
+                <label class="checkbox_label" for="chat-config-snapshot-scope-regex">
+                    <input type="checkbox" id="chat-config-snapshot-scope-regex" />
+                    <span>正则配置</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 快照管理区块 -->
+    <div class="marginBot10">
+        <h4>快照管理</h4>
+        
+        <div class="flex-container flexGap10 marginBot10">
+            <div class="menu_button" id="chat-config-snapshot-refresh-list">
+                <i class="fa-solid fa-refresh"></i>
+                <span>刷新列表</span>
+            </div>
+            
+            <div class="menu_button" id="chat-config-snapshot-clear-all">
+                <i class="fa-solid fa-trash"></i>
+                <span>清空所有快照</span>
+            </div>
+        </div>
+        
+        <!-- 快照列表 -->
+        <div id="chat-config-snapshot-list" class="flex-container flexFlowColumn">
+            <div class="justifyCenter">
+                <small>暂无快照</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 快照详情弹窗模板 -->
+<div id="chat-config-snapshot-detail-template" style="display: none;">
+    <div class="flex-container flexFlowColumn">
+        <div class="marginBot10">
+            <strong>快照信息</strong>
+            <div class="marginTop5">
+                <div>创建时间: <span class="snapshot-created-at"></span></div>
+                <div>消息数量: <span class="snapshot-message-count"></span></div>
+            </div>
+        </div>
+        
+        <div class="marginBot10" id="snapshot-preset-info" style="display: none;">
+            <strong>预设配置</strong>
+            <div class="marginTop5">
+                <div>预设名称: <span class="snapshot-preset-name"></span></div>
+                <div>提示词条目: <span class="snapshot-prompt-entries"></span></div>
+            </div>
+        </div>
+        
+        <div class="marginBot10" id="snapshot-worldinfo-info" style="display: none;">
+            <strong>世界书配置</strong>
+            <div class="marginTop5">
+                <div>全局世界书: <span class="snapshot-worldinfo-global"></span></div>
+                <div>角色世界书: <span class="snapshot-worldinfo-character"></span></div>
+                <div>聊天世界书: <span class="snapshot-worldinfo-chat"></span></div>
+            </div>
+        </div>
+        
+        <div class="marginBot10" id="snapshot-regex-info" style="display: none;">
+            <strong>正则配置</strong>
+            <div class="marginTop5">
+                <div>全局正则: <span class="snapshot-regex-global"></span></div>
+                <div>角色正则: <span class="snapshot-regex-character"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
